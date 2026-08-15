@@ -1,6 +1,6 @@
-# Decipherent marketing website
+# UnTangle marketing website
 
-Static landing page and waitlist for [Decipherent](https://www.untangleself.com).
+Static landing page and waitlist for [UnTangle](https://www.untangleself.com).
 
 The product app (emotional flow, chat UI, LLM API) lives in the separate **`untangle-product`** repository. This repo contains only the marketing site.
 
