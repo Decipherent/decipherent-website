@@ -2,6 +2,8 @@ import { WAITLIST_SUCCESS, handleWaitlistSubmission } from '../lib/waitlist-hand
 import { getRedis, isRateLimitAllowed } from '../lib/redis.js'
 
 const ALLOWED_ORIGINS = new Set([
+  'https://www.decipherent.com',
+  'https://decipherent.com',
   'https://www.untangleself.com',
   'https://untangleself.com',
   'http://localhost:5173',

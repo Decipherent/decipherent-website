@@ -62,7 +62,8 @@ function renderTurnstileWidget() {
     'expired-callback': () => {
       if (turnstileWidgetId !== null) window.turnstile?.reset(turnstileWidgetId)
     },
-    'error-callback': () => {
+    'error-callback': (errorCode) => {
+      console.error('Turnstile error:', errorCode)
       showWaitlistError('Verification could not load. Please refresh and try again.')
     },
   })

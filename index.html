@@ -4,6 +4,8 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Decipherent — See what's underneath</title>
+<link rel="icon" type="image/png" href="/public/logo-icon-light.png" />
+<link rel="apple-touch-icon" href="/public/logo-icon-light.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
@@ -26,7 +28,12 @@
   body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 
   /* Hero */
-  .hero-wrap { background: var(--hero-bg); padding: 96px 28px 88px; text-align: center; }
+  .hero-wrap { position: relative; background: var(--hero-bg); padding: 80px 28px 64px; text-align: center; }
+  .hero-logo {
+    position: absolute; top: 32px; left: 32px;
+    width: 36px; height: 36px; display: block;
+    object-fit: contain;
+  }
   .hero-inner { max-width: 780px; margin: 0 auto; }
   .hero-title {
     font-family: var(--serif); font-weight: 400; color: var(--hero-text);
@@ -37,7 +44,7 @@
   }
   .hero-moments {
     display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
-    margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--hero-line);
+    margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--hero-line);
   }
   .moment {
     font-size: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; color: #607068;
@@ -45,34 +52,34 @@
   }
   .moment:last-child { border-right: none; }
 
-  /* Shared section styles */
-  main.section { max-width: 680px; margin: 0 auto; padding: 88px 28px 88px; border-top: 1px solid var(--rule); }
+  /* Shared section styles — keep top breathing room; keep bottom tight so closings sit near the next rule */
+  main.section { max-width: 680px; margin: 0 auto; padding: 56px 28px 28px; border-top: 1px solid var(--rule); }
   .eyebrow {
     font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--soft);
-    margin-bottom: 18px; font-weight: 600;
+    margin-bottom: 16px; font-weight: 600;
   }
   .lead {
     font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.42; font-weight: 500; letter-spacing: -0.02em;
-    color: var(--text); margin: 0 0 22px; max-width: 580px;
+    color: var(--text); margin: 0 0 18px; max-width: 580px;
   }
   .body-text {
     font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0;
   }
   .closing {
     font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.3rem);
-    color: var(--accent); letter-spacing: -0.01em; margin-top: 32px; line-height: 1.4;
+    color: var(--accent); letter-spacing: -0.01em; margin: 28px 0 0; line-height: 1.4;
   }
 
   /* Section 3 specific */
-  .s3-body { margin-bottom: 48px; }
-  .insights { padding-top: 32px; border-top: 1px solid var(--rule); max-width: 620px; }
-  .insight { padding: 30px 0; border-bottom: 1px solid var(--rule); }
+  .s3-body { margin-bottom: 36px; }
+  .insights { padding-top: 24px; border-top: 1px solid var(--rule); max-width: 620px; }
+  .insight { padding: 24px 0; border-bottom: 1px solid var(--rule); }
   .insight-claim {
     font-size: clamp(1.02rem, 1.8vw, 1.14rem); font-weight: 600; letter-spacing: -0.02em; color: var(--text);
     line-height: 1.4; margin: 0 0 8px;
   }
   .insight-body { font-size: 0.96rem; color: var(--muted); line-height: 1.72; margin: 0; }
-  .s3-closing { margin-top: 44px; font-size: clamp(1.15rem, 2.1vw, 1.38rem); }
+  .s3-closing { margin-top: 36px; font-size: clamp(1.15rem, 2.1vw, 1.38rem); }
 
   /* ── Section 4 — Meet Sae ──────────────────────────
      Structurally distinct: serif headline (more personal
@@ -80,23 +87,23 @@
      text side by side, generous whitespace to feel like a
      new chapter, not a template repeat.
   ──────────────────────────────────────────────── */
-  .sae-section { padding: 100px 28px 108px; }
+  .sae-section { padding: 64px 28px 28px; }
   .sae-headline {
     font-family: var(--serif); font-weight: 400; font-style: italic;
     font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.28; letter-spacing: -0.01em;
-    color: var(--text); margin: 0 0 28px; max-width: 560px;
+    color: var(--text); margin: 0 0 22px; max-width: 560px;
   }
   .sae-body {
-    font-size: 1.04rem; line-height: 1.82; color: var(--muted); max-width: 540px; margin: 0 0 52px;
+    font-size: 1.04rem; line-height: 1.82; color: var(--muted); max-width: 540px; margin: 0 0 36px;
   }
   .sae-notices { max-width: 540px; }
   .sae-notice {
-    font-size: 1.01rem; line-height: 1.75; color: var(--text); margin: 0 0 24px; padding-left: 20px;
+    font-size: 1.01rem; line-height: 1.75; color: var(--text); margin: 0 0 18px; padding-left: 20px;
     border-left: 2px solid var(--accent);
   }
   .sae-notice:last-child { margin-bottom: 0; }
   .sae-closing {
-    margin-top: 56px; font-size: clamp(1.2rem, 2.2vw, 1.42rem);
+    margin-top: 40px; font-size: clamp(1.2rem, 2.2vw, 1.42rem);
   }
   .sae-closing.center { text-align: center; }
 
@@ -106,13 +113,13 @@
      rather than explains. Supporting points come after,
      shorter and quieter than the conversation itself.
   ──────────────────────────────────────────────── */
-  .exp-section { padding: 100px 28px 108px; max-width: 720px; }
+  .exp-section { padding: 64px 28px 28px; max-width: 720px; }
   .exp-lead {
     font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.42; font-weight: 500; letter-spacing: -0.02em;
-    color: var(--text); margin: 0 0 22px; max-width: 580px;
+    color: var(--text); margin: 0 0 18px; max-width: 580px;
   }
   .exp-body {
-    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0 0 60px;
+    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0 0 40px;
   }
 
   .convo-frame {
@@ -124,11 +131,11 @@
     object-fit: cover; object-position: 12px center; border-radius: 12px;
   }
   .convo-caption {
-    margin: 0 0 64px; font-size: 0.82rem; color: var(--soft); line-height: 1.5;
+    margin: 0 0 40px; font-size: 0.82rem; color: var(--soft); line-height: 1.5;
   }
 
-  .exp-points { padding-top: 40px; border-top: 1px solid var(--rule); max-width: 560px; }
-  .exp-point { margin-bottom: 28px; }
+  .exp-points { padding-top: 28px; border-top: 1px solid var(--rule); max-width: 560px; }
+  .exp-point { margin-bottom: 22px; }
   .exp-point:last-child { margin-bottom: 0; }
   .exp-point-claim {
     font-size: 1.02rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text);
@@ -136,41 +143,41 @@
   }
   .exp-point-body { font-size: 0.95rem; color: var(--muted); line-height: 1.68; margin: 0; }
 
-  .exp-closing { margin-top: 56px; font-size: clamp(1.15rem, 2.1vw, 1.36rem); }
+  .exp-closing { margin-top: 40px; font-size: clamp(1.15rem, 2.1vw, 1.36rem); }
 
   /* ── Section 6 — Proof ──────────────────────────────
      Reuses the insight-block pattern from Section 3 for
      the three proof moments, keeping visual consistency
      rather than inventing a new component.
   ──────────────────────────────────────────────── */
-  .proof-section { padding: 100px 28px 108px; max-width: 680px; }
+  .proof-section { padding: 64px 28px 28px; max-width: 680px; }
   .proof-lead {
     font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.42; font-weight: 500; letter-spacing: -0.02em;
-    color: var(--text); margin: 0 0 22px; max-width: 580px;
+    color: var(--text); margin: 0 0 18px; max-width: 580px;
   }
   .proof-body {
-    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0 0 48px;
+    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0 0 36px;
   }
-  .proof-closing { margin-top: 44px; font-size: clamp(1.15rem, 2.1vw, 1.38rem); }
+  .proof-closing { margin-top: 36px; font-size: clamp(1.15rem, 2.1vw, 1.38rem); }
 
   /* ── Section 7 — Founder ──────────────────────────
      Quieter and more intimate than Proof. Editorial
      composition, no profile card, no headshot — the
      name appears subtly beneath the closing line.
   ──────────────────────────────────────────────── */
-  .founder-section { padding: 96px 28px 108px; max-width: 620px; }
+  .founder-section { padding: 64px 28px 28px; max-width: 620px; }
   .founder-lead {
     font-size: clamp(1.2rem, 2.2vw, 1.48rem); line-height: 1.48; font-weight: 500; letter-spacing: -0.02em;
-    color: var(--text); margin: 0 0 32px; max-width: 560px;
+    color: var(--text); margin: 0 0 24px; max-width: 560px;
   }
   .founder-body {
     font-size: 1.02rem; line-height: 1.85; color: var(--muted); max-width: 520px; margin: 0;
   }
-  .founder-body p { margin: 0 0 22px; }
+  .founder-body p { margin: 0 0 18px; }
   .founder-body p:last-child { margin-bottom: 0; }
-  .founder-closing { margin-top: 48px; font-size: clamp(1.1rem, 2vw, 1.3rem); }
+  .founder-closing { margin-top: 36px; font-size: clamp(1.1rem, 2vw, 1.3rem); }
   .founder-identity {
-    margin-top: 28px; display: flex; align-items: center; gap: 12px;
+    margin-top: 24px; display: flex; align-items: center; gap: 12px;
   }
   .founder-photo {
     width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
@@ -184,9 +191,9 @@
      the established scale. Structure, copy, and card
      treatment are otherwise preserved as-is.
   ──────────────────────────────────────────────── */
-  .waitlist-wrap { max-width: 680px; margin: 0 auto; padding: 8px 28px 96px; }
+  .waitlist-wrap { max-width: 680px; margin: 0 auto; padding: 24px 28px 72px; }
   .waitlist {
-    padding: 52px 56px; background: #EAE5DC; border-radius: 20px; text-align: center;
+    padding: 44px 48px; background: #EAE5DC; border-radius: 20px; text-align: center;
   }
   .waitlist-label {
     display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em;
@@ -224,7 +231,7 @@
   .waitlist-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
 
   footer {
-    max-width: 680px; margin: 0 auto; padding: 26px 28px 64px;
+    max-width: 680px; margin: 0 auto; padding: 24px 28px 48px;
     border-top: 1px solid var(--rule); display: flex; justify-content: space-between;
     align-items: center; gap: 16px; flex-wrap: wrap;
   }
@@ -234,19 +241,31 @@
     padding-bottom: 1px; font-size: 0.88rem; transition: color 0.15s, border-color 0.15s;
   }
   footer a:hover { color: var(--muted); border-color: var(--soft); }
-  .footer-icon { width: 32px; height: 32px; flex-shrink: 0; }
+  .footer-icon {
+    width: 32px; height: 32px; flex-shrink: 0;
+    border-radius: 7px; object-fit: cover; display: block;
+  }
 
   @media (max-width: 640px) {
-    .waitlist { padding: 40px 28px; border-radius: 16px; }
+    .hero-wrap { padding: 64px 22px 48px; }
+    .hero-logo { top: 28px; left: 28px; width: 32px; height: 32px; }
+    main.section,
+    .sae-section,
+    .exp-section,
+    .proof-section,
+    .founder-section { padding: 48px 22px 24px; }
+    .waitlist-wrap { padding: 16px 22px 56px; }
+    .waitlist { padding: 36px 24px; border-radius: 16px; }
     .waitlist-form-row { flex-direction: column; }
     .waitlist-btn { width: 100%; }
-    footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+    footer { flex-direction: column; align-items: flex-start; gap: 12px; padding: 20px 22px 40px; }
   }
 </style>
 </head>
 <body>
 
 <header class="hero-wrap">
+  <img class="hero-logo" src="/public/logo-icon-light.png" alt="Decipherent" width="36" height="36" />
   <div class="hero-inner">
     <h1 class="hero-title">
       Something is sitting with you.<br />
