@@ -1,845 +1,429 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Understand what's actually underneath overwhelming feelings — through guided emotional clarity, not rushed advice. Meet Ira." />
-    
-    <!-- Open Graph / Social Preview -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://untangleself.com/" />
-    <meta property="og:title" content="UnTangle — Clarity for what's actually going on inside" />
-    <meta property="og:description" content="Understand what's actually underneath overwhelming feelings. Through guided emotional clarity, not rushed advice." />
-    <meta property="og:image" content="https://untangleself.com/public/og-image.png" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:type" content="image/png" />
-    <meta property="og:site_name" content="UnTangle" />
-    <meta property="og:locale" content="en_US" />
-    
-    <!-- Twitter/X Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://untangleself.com/" />
-    <meta name="twitter:title" content="UnTangle — Clarity for what's actually going on inside" />
-    <meta name="twitter:description" content="Understand what's actually underneath overwhelming feelings. Through guided emotional clarity, not rushed advice." />
-    <meta name="twitter:image" content="https://untangleself.com/public/og-image.png" />
-    <meta name="twitter:image:alt" content="UnTangle - Emotional clarity when everything feels tangled" />
-    <title>UnTangle — Clarity for what's actually going on inside</title>
-    <link rel="icon" type="image/png" href="/public/logo-icon-light.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-    <style>
-      /*
-        Palette rationale
-        ─────────────────
-        App uses: #E8E3DC bg · #B39978 CTA · #7C8175 secondary
-        Website mirrors that warmth:
-          Hero:  deep warm-dark #100E0C — intimate, where you are (tangled)
-          Body:  warm cream #F5F1EB   — where the product takes you (clarity)
-          Accent #B39978 used sparingly as a thread connecting both worlds
-      */
- 
-      :root {
-        --hero-bg:    #131A16;   /* deep forest sage — references app's #7C8175 secondary */
-        --hero-text:  #EDE8E2;
-        --hero-muted: #7A8A80;   /* lifted to be readable on sage-dark bg */
-        --hero-line:  #1E2C22;
- 
-        --bg:     #F5F1EB;
-        --text:   #1A1612;
-        --muted:  #6B6258;
-        --soft:   #A89E95;
-        --rule:   #DDD8CF;
-        --accent: #B39978;
- 
-        --serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
-        --sans:  -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-                 'Helvetica Neue', Arial, sans-serif;
-      }
- 
-      * { box-sizing: border-box; }
- 
-      body {
-        margin: 0;
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--sans);
-        -webkit-font-smoothing: antialiased;
-        font-size: 16px;
-        line-height: 1.5;
-      }
- 
-      p { margin: 0; }
- 
-      /* ── Hero ─────────────────────────────────────────
-         Full-bleed dark. This is where the user IS —
-         tangled, circling, unable to see clearly.
-      ──────────────────────────────────────────────── */
- 
-      .hero-wrap {
-        position: relative;
-        background: var(--hero-bg);
-        padding: 52px 28px 88px;
-      }
- 
-      .hero-inner {
-        max-width: 820px;
-        margin: 0 auto;
-        text-align: center;
-      }
- 
-      .hero-logo {
-        width: min(66px, 13.5vw);
-        height: auto;
-        position: absolute;
-        top: 24px;
-        left: 28px;
-        margin: 0;
-      }
- 
-      .hero-title {
-        margin: 0;
-        font-family: var(--serif);
-        font-weight: 400;
-        font-size: clamp(2.6rem, 5.6vw, 4.4rem);
-        line-height: 1.07;
-        letter-spacing: -0.01em;
-        color: var(--hero-text);
-      }
- 
-      .hero-sub {
-        margin: 24px auto 0;
-        max-width: 440px;
-        font-size: clamp(0.95rem, 1.6vw, 1.06rem);
-        color: var(--hero-muted);
-        line-height: 1.75;
-      }
- 
-      /* Moment-of-use row — quiet, contextual */
-      .hero-moments {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        margin-top: 56px;
-        padding-top: 32px;
-        border-top: 1px solid var(--hero-line);
-      }
- 
-      .moment {
-        font-size: 0.7rem;
-        letter-spacing: 0.11em;
-        text-transform: uppercase;
-        color: #607068;   /* muted sage — readable on forest-dark bg */
-        padding: 0 22px;
-        border-right: 1px solid var(--hero-line);
-        line-height: 1;
-      }
- 
-      .moment:last-child { border-right: none; }
- 
-      /* ── Main — warm cream ────────────────────────────
-         The product space. Light, grounded, intentional.
-      ──────────────────────────────────────────────── */
- 
-      main {
-        max-width: 1020px;
-        margin: 0 auto;
-        padding: 76px 28px 84px;
-      }
- 
-      /* ── Bridge ───────────────────────────────────────
-         Not a section. One statement that reframes
-         everything that came before the demo.
-      ──────────────────────────────────────────────── */
- 
-      .bridge {
-        max-width: 600px;
-        font-size: clamp(1.2rem, 2.2vw, 1.52rem);
-        line-height: 1.42;
-        letter-spacing: -0.02em;
-        font-weight: 500;
-        color: var(--text);
-        margin: 0 0 20px;
-      }
- 
-      .bridge-sub {
-        max-width: 600px;
-        font-size: 1.02rem;
-        color: var(--muted);
-        line-height: 1.75;
-        margin: 0 0 88px;
-      }
- 
-      /* ── Demo ─────────────────────────────────────────
-         The center of the page. Video is the evidence.
-         Commentary is the insight beside it.
-      ──────────────────────────────────────────────── */
- 
-      .demo-grid {
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-        gap: 52px;
-        align-items: center;
-      }
- 
-      .video-frame {
-        position: relative;
-        border-radius: 18px;
-        border: 1px solid var(--rule);
-        background: #EBE6DE;
-        padding: 10px;
-      }
- 
-      .demo-video video {
-        display: block;
-        width: 100%;
-        height: auto;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        object-position: 12px center;
-        border-radius: 12px;
-      }
- 
-      .video-caption {
-        margin-top: 10px;
-        font-size: 0.82rem;
-        color: var(--soft);
-        line-height: 1.5;
-      }
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Decipherent — Sections 1-4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --hero-bg: #131A16;
+    --hero-text: #EDE8E2;
+    --hero-muted: #7A8A80;
+    --hero-line: #1E2C22;
+    --bg: #F5F1EB;
+    --text: #1A1612;
+    --muted: #6B6258;
+    --soft: #A89E95;
+    --rule: #DDD8CF;
+    --accent: #B39978;
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
 
- 
-      .commentary {
-        padding-top: 4px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        min-height: 100%;
-      }
- 
-      /* The core thesis — heaviest non-H1 text on the page */
-      .thesis {
-        font-size: clamp(1.16rem, 2vw, 1.38rem);
-        line-height: 1.38;
-        letter-spacing: -0.022em;
-        font-weight: 620;
-        color: var(--text);
-        margin: 0 0 24px;
-      }
- 
-      .support {
-        font-size: 1.02rem;
-        line-height: 1.78;
-        color: var(--muted);
-        max-width: 480px;
-      }
- 
-      .support p + p { margin-top: 10px; }
- 
-      /* ── Quote block ──────────────────────────────────
-         Dark again — bookends the hero.
-         This is where the user will land.
-      ──────────────────────────────────────────────── */
- 
-      .quote-block {
-        margin-top: 88px;
-        margin-bottom: 88px;
-        background: var(--hero-bg);
-        border-radius: 22px;
-        padding: 56px 64px;
-        text-align: center;
-        position: relative;
-      }
- 
-      .quote-mark {
-        font-family: var(--serif);
-        font-size: 4rem;
-        line-height: 0.6;
-        color: #243020;
-        display: block;
-        margin-bottom: 20px;
-        user-select: none;
-      }
- 
-      .quote-text {
-        font-family: var(--serif);
-        font-style: italic;
-        font-size: clamp(1.3rem, 2.5vw, 1.9rem);
-        line-height: 1.4;
-        letter-spacing: -0.01em;
-        color: var(--hero-text);
-        max-width: 540px;
-        margin: 0 auto;
-      }
- 
-      .quote-attr {
-        margin-top: 20px;
-        font-size: 0.7rem;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-        color: #607068;
-      }
- 
-      /* ── Insights ─────────────────────────────────────
-         Stacked observations about how clarity works.
-         Creates curiosity — not a process explanation.
-      ──────────────────────────────────────────────── */
+  /* Hero */
+  .hero-wrap { background: var(--hero-bg); padding: 96px 28px 88px; text-align: center; }
+  .hero-inner { max-width: 780px; margin: 0 auto; }
+  .hero-title {
+    font-family: var(--serif); font-weight: 400; color: var(--hero-text);
+    font-size: clamp(2.4rem, 5.4vw, 3.9rem); line-height: 1.12; letter-spacing: -0.01em; margin: 0;
+  }
+  .hero-sub {
+    margin: 26px auto 0; max-width: 460px; font-size: 1.02rem; color: var(--hero-muted); line-height: 1.75;
+  }
+  .hero-moments {
+    display: flex; justify-content: center; align-items: center; flex-wrap: wrap;
+    margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--hero-line);
+  }
+  .moment {
+    font-size: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; color: #607068;
+    padding: 0 22px; border-right: 1px solid var(--hero-line); line-height: 1;
+  }
+  .moment:last-child { border-right: none; }
 
-      .insights {
-        margin-top: 56px;
-        padding-top: 32px;
-        border-top: 1px solid var(--rule);
-        max-width: 680px;
-      }
+  /* Shared section styles */
+  main.section { max-width: 680px; margin: 0 auto; padding: 88px 28px 88px; border-top: 1px solid var(--rule); }
+  .eyebrow {
+    font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--soft);
+    margin-bottom: 18px; font-weight: 600;
+  }
+  .lead {
+    font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.42; font-weight: 500; letter-spacing: -0.02em;
+    color: var(--text); margin: 0 0 22px; max-width: 580px;
+  }
+  .body-text {
+    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0;
+  }
+  .closing {
+    font-family: var(--serif); font-style: italic; font-size: clamp(1.1rem, 2vw, 1.3rem);
+    color: var(--accent); letter-spacing: -0.01em; margin-top: 32px; line-height: 1.4;
+  }
 
-      .insight {
-        padding: 32px 0;
-        border-bottom: 1px solid var(--rule);
-      }
+  /* Section 3 specific */
+  .s3-body { margin-bottom: 48px; }
+  .insights { padding-top: 32px; border-top: 1px solid var(--rule); max-width: 620px; }
+  .insight { padding: 30px 0; border-bottom: 1px solid var(--rule); }
+  .insight-claim {
+    font-size: clamp(1.02rem, 1.8vw, 1.14rem); font-weight: 600; letter-spacing: -0.02em; color: var(--text);
+    line-height: 1.4; margin: 0 0 8px;
+  }
+  .insight-body { font-size: 0.96rem; color: var(--muted); line-height: 1.72; margin: 0; }
+  .s3-closing { margin-top: 44px; font-size: clamp(1.15rem, 2.1vw, 1.38rem); }
 
-      .insight-claim {
-        font-size: clamp(1.02rem, 1.8vw, 1.18rem);
-        font-weight: 600;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        line-height: 1.38;
-        margin: 0 0 10px;
-      }
+  /* ── Section 4 — Meet Sae ──────────────────────────
+     Structurally distinct: serif headline (more personal
+     register than sections 2-3's sans lead), demo video +
+     text side by side, generous whitespace to feel like a
+     new chapter, not a template repeat.
+  ──────────────────────────────────────────────── */
+  .sae-section { padding: 100px 28px 108px; }
+  .sae-headline {
+    font-family: var(--serif); font-weight: 400; font-style: italic;
+    font-size: clamp(1.7rem, 3.4vw, 2.5rem); line-height: 1.28; letter-spacing: -0.01em;
+    color: var(--text); margin: 0 0 28px; max-width: 560px;
+  }
+  .sae-body {
+    font-size: 1.04rem; line-height: 1.82; color: var(--muted); max-width: 540px; margin: 0 0 52px;
+  }
+  .sae-notices { max-width: 540px; }
+  .sae-notice {
+    font-size: 1.01rem; line-height: 1.75; color: var(--text); margin: 0 0 24px; padding-left: 20px;
+    border-left: 2px solid var(--accent);
+  }
+  .sae-notice:last-child { margin-bottom: 0; }
+  .sae-closing {
+    margin-top: 56px; font-size: clamp(1.2rem, 2.2vw, 1.42rem);
+  }
+  .sae-closing.center { text-align: center; }
 
-      .insight-body {
-        font-size: 0.96rem;
-        color: var(--muted);
-        line-height: 1.72;
-        margin: 0;
-      }
+  /* ── Section 5 — Experience ──────────────────────────
+     The conversation itself is the visual anchor. Chat
+     bubbles instead of prose blocks — this section shows
+     rather than explains. Supporting points come after,
+     shorter and quieter than the conversation itself.
+  ──────────────────────────────────────────────── */
+  .exp-section { padding: 100px 28px 108px; max-width: 720px; }
+  .exp-lead {
+    font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.42; font-weight: 500; letter-spacing: -0.02em;
+    color: var(--text); margin: 0 0 22px; max-width: 580px;
+  }
+  .exp-body {
+    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0 0 60px;
+  }
 
-      .insights-close {
-        margin-top: 28px;
-        font-family: var(--serif);
-        font-style: italic;
-        font-size: clamp(1.1rem, 2vw, 1.3rem);
-        color: var(--accent);
-        letter-spacing: -0.01em;
-      }
+  .convo-frame {
+    position: relative; border-radius: 18px; border: 1px solid var(--rule);
+    background: #EBE6DE; padding: 10px; margin-bottom: 12px;
+  }
+  .convo-frame video {
+    display: block; width: 100%; height: auto; aspect-ratio: 1 / 1;
+    object-fit: cover; object-position: 12px center; border-radius: 12px;
+  }
+  .convo-caption {
+    margin: 0 0 64px; font-size: 0.82rem; color: var(--soft); line-height: 1.5;
+  }
 
-      /* ── Experience section header ───────────────────── */
-      .section-intro {
-        font-size: clamp(1.1rem, 2vw, 1.3rem);
-        font-weight: 600;
-        color: var(--text);
-        margin: 0 0 32px;
-        line-height: 1.3;
-      }
- 
-      /* ── Founder ──────────────────────────────────────── */
- 
-      .founder {
-        margin-top: 56px;
-        padding-top: 40px;
-        border-top: 1px solid var(--rule);
-        display: grid;
-        grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
-        gap: 52px;
-        align-items: start;
-      }
- 
-      .founder-label {
-        display: block;
-        font-size: 0.65rem;
-        font-weight: 600;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-        color: var(--soft);
-        margin-bottom: 10px;
-      }
- 
-      .founder-name {
-        font-size: clamp(1.15rem, 2vw, 1.38rem);
-        font-weight: 600;
-        letter-spacing: -0.022em;
-        color: var(--text);
-        margin: 0 0 8px;
-        line-height: 1.2;
-      }
- 
-      .founder-role {
-        font-size: 0.87rem;
-        color: var(--soft);
-        line-height: 1.65;
-      }
- 
-      .founder-why {
-        font-size: 1.02rem;
-        color: var(--muted);
-        line-height: 1.72;
-      }
- 
-      .founder-why p + p { margin-top: 12px; }
- 
-      /* ── Footer ───────────────────────────────────────── */
- 
-      footer {
-        margin-top: 52px;
-        padding-top: 22px;
-        border-top: 1px solid rgba(95, 87, 77, 0.08);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 16px;
-        color: #5f574d;
-        font-size: 1rem;
-        flex-wrap: wrap;
-        opacity: 1;
-      }
+  .exp-points { padding-top: 40px; border-top: 1px solid var(--rule); max-width: 560px; }
+  .exp-point { margin-bottom: 28px; }
+  .exp-point:last-child { margin-bottom: 0; }
+  .exp-point-claim {
+    font-size: 1.02rem; font-weight: 600; letter-spacing: -0.02em; color: var(--text);
+    line-height: 1.4; margin: 0 0 6px;
+  }
+  .exp-point-body { font-size: 0.95rem; color: var(--muted); line-height: 1.68; margin: 0; }
 
-      footer p {
-        font-size: 1rem;
-        color: #5f574d;
-        opacity: 0.92;
-      }
+  .exp-closing { margin-top: 56px; font-size: clamp(1.15rem, 2.1vw, 1.36rem); }
 
-      footer > div > p {
-        font-size: 1rem;
-        color: #5f574d;
-      }
- 
-      footer a {
-        color: var(--soft);
-        text-decoration: none;
-        border-bottom: 1px solid var(--rule);
-        padding-bottom: 1px;
-        transition: color 0.15s, border-color 0.15s;
-      }
- 
-      footer a:hover {
-        color: var(--muted);
-        border-color: var(--soft);
-      }
- 
-      .footer-icon {
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-        display: block;
-        flex-shrink: 0;
-        max-width: none;
-        transform: none;
-        opacity: 1;
-        filter: none;
-      }
+  /* ── Section 6 — Proof ──────────────────────────────
+     Reuses the insight-block pattern from Section 3 for
+     the three proof moments, keeping visual consistency
+     rather than inventing a new component.
+  ──────────────────────────────────────────────── */
+  .proof-section { padding: 100px 28px 108px; max-width: 680px; }
+  .proof-lead {
+    font-size: clamp(1.25rem, 2.3vw, 1.55rem); line-height: 1.42; font-weight: 500; letter-spacing: -0.02em;
+    color: var(--text); margin: 0 0 22px; max-width: 580px;
+  }
+  .proof-body {
+    font-size: 1.02rem; line-height: 1.78; color: var(--muted); max-width: 540px; margin: 0 0 48px;
+  }
+  .proof-closing { margin-top: 44px; font-size: clamp(1.15rem, 2.1vw, 1.38rem); }
 
-      footer > div > img {
-        width: 44px;
-        height: 44px;
-        min-width: 44px;
-      }
+  /* ── Section 7 — Founder ──────────────────────────
+     Quieter and more intimate than Proof. Editorial
+     composition, no profile card, no headshot — the
+     name appears subtly beneath the closing line.
+  ──────────────────────────────────────────────── */
+  .founder-section { padding: 96px 28px 108px; max-width: 620px; }
+  .founder-lead {
+    font-size: clamp(1.2rem, 2.2vw, 1.48rem); line-height: 1.48; font-weight: 500; letter-spacing: -0.02em;
+    color: var(--text); margin: 0 0 32px; max-width: 560px;
+  }
+  .founder-body {
+    font-size: 1.02rem; line-height: 1.85; color: var(--muted); max-width: 520px; margin: 0;
+  }
+  .founder-body p { margin: 0 0 22px; }
+  .founder-body p:last-child { margin-bottom: 0; }
+  .founder-closing { margin-top: 48px; font-size: clamp(1.1rem, 2vw, 1.3rem); }
+  .founder-identity {
+    margin-top: 28px; display: flex; align-items: center; gap: 12px;
+  }
+  .founder-photo {
+    width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+    object-position: center 12%; border: 1.5px solid var(--rule); flex-shrink: 0;
+  }
+  .founder-name { font-size: 0.82rem; color: var(--soft); letter-spacing: 0.02em; }
 
-      footer a {
-        opacity: 0.72;
-      }
- 
-      /* ── Founder photo ────────────────────────────────── */
- 
-      .founder-left {
-        display: flex;
-        gap: 16px;
-        align-items: flex-start;
-      }
- 
-      .founder-photo {
-        width: 58px;
-        height: 58px;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: center 12%;
-        flex-shrink: 0;
-        border: 1.5px solid var(--rule);
-      }
- 
-      /* ── Waitlist ─────────────────────────────────────── */
- 
-      .waitlist {
-        margin-top: 72px;
-        padding: 48px 52px;
-        background: #EAE5DC;
-        border-radius: 20px;
-        text-align: center;
-      }
- 
-      .waitlist-label {
-        display: block;
-        font-size: 0.65rem;
-        font-weight: 600;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
-        color: var(--soft);
-        margin-bottom: 12px;
-      }
- 
-      .waitlist-heading {
-        font-size: clamp(1.1rem, 2vw, 1.4rem);
-        font-weight: 600;
-        letter-spacing: -0.022em;
-        color: var(--text);
-        margin: 0 0 8px;
-        line-height: 1.3;
-      }
- 
-      .waitlist-sub {
-        font-size: 0.9rem;
-        color: var(--muted);
-        margin: 0 0 24px;
-        line-height: 1.6;
-      }
- 
-      .waitlist-form {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        max-width: 400px;
-        margin: 0 auto;
-      }
+  /* ── Section 8 — Waitlist ──────────────────────────
+     Refinement pass only: brought into the same content
+     width/rhythm as Sections 2-7, typography aligned to
+     the established scale. Structure, copy, and card
+     treatment are otherwise preserved as-is.
+  ──────────────────────────────────────────────── */
+  .waitlist-wrap { max-width: 680px; margin: 0 auto; padding: 8px 28px 96px; }
+  .waitlist {
+    padding: 52px 56px; background: #EAE5DC; border-radius: 20px; text-align: center;
+  }
+  .waitlist-label {
+    display: block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em;
+    text-transform: uppercase; color: var(--soft); margin-bottom: 14px;
+  }
+  .waitlist-heading {
+    font-size: clamp(1.15rem, 2vw, 1.42rem); font-weight: 600; letter-spacing: -0.022em;
+    color: var(--text); margin: 0 0 10px; line-height: 1.3;
+  }
+  .waitlist-sub {
+    font-size: 0.94rem; color: var(--muted); margin: 0 0 28px; line-height: 1.65;
+  }
+  .waitlist-form { display: flex; flex-direction: column; gap: 12px; max-width: 400px; margin: 0 auto; }
+  .waitlist-form-row { display: flex; gap: 10px; width: 100%; }
+  .waitlist-input {
+    flex: 1; padding: 12px 16px; border: 1px solid var(--rule); border-radius: 10px;
+    background: var(--bg); color: var(--text); font-size: 0.92rem; font-family: var(--sans);
+    outline: none; transition: border-color 0.15s; -webkit-appearance: none;
+  }
+  .waitlist-input:focus { border-color: var(--accent); }
+  .waitlist-input::placeholder { color: var(--soft); }
+  .waitlist-btn {
+    padding: 12px 22px; background: var(--accent); color: #fff; border: none; border-radius: 10px;
+    font-size: 0.88rem; font-weight: 500; font-family: var(--sans); cursor: pointer;
+    white-space: nowrap; transition: background 0.15s, transform 0.1s;
+  }
+  .waitlist-btn:hover { background: #9E845F; }
+  .waitlist-btn:active { transform: scale(0.98); }
+  .waitlist-note { margin-top: 14px; font-size: 0.75rem; color: var(--soft); }
 
-      .waitlist-form-row {
-        display: flex;
-        gap: 10px;
-        width: 100%;
-      }
- 
-      .waitlist-input {
-        flex: 1;
-        padding: 11px 16px;
-        border: 1px solid var(--rule);
-        border-radius: 10px;
-        background: var(--bg);
-        color: var(--text);
-        font-size: 0.92rem;
-        font-family: var(--sans);
-        outline: none;
-        transition: border-color 0.15s;
-        -webkit-appearance: none;
-      }
- 
-      .waitlist-input:focus { border-color: var(--accent); }
- 
-      .waitlist-input::placeholder { color: var(--soft); }
- 
-      .waitlist-btn {
-        padding: 11px 22px;
-        background: var(--accent);
-        color: #fff;
-        border: none;
-        border-radius: 10px;
-        font-size: 0.88rem;
-        font-weight: 500;
-        font-family: var(--sans);
-        cursor: pointer;
-        white-space: nowrap;
-        transition: background 0.15s, transform 0.1s;
-      }
- 
-      .waitlist-btn:hover { background: #9E845F; }
-      .waitlist-btn:active { transform: scale(0.98); }
-      .waitlist-btn:disabled {
-        opacity: 0.65;
-        cursor: not-allowed;
-        transform: none;
-      }
+  .waitlist-turnstile { display: flex; justify-content: center; }
+  .waitlist-honeypot { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+  .waitlist-error { display: none; margin: 0; font-size: 0.75rem; color: #8a5a4a; line-height: 1.5; }
+  .waitlist-confirm { display: none; font-size: 0.95rem; color: var(--muted); padding: 10px 0 4px; }
+  .waitlist-btn:disabled { opacity: 0.65; cursor: not-allowed; transform: none; }
 
-      .waitlist-turnstile {
-        display: flex;
-        justify-content: center;
-      }
+  footer {
+    max-width: 680px; margin: 0 auto; padding: 26px 28px 64px;
+    border-top: 1px solid var(--rule); display: flex; justify-content: space-between;
+    align-items: center; gap: 16px; flex-wrap: wrap;
+  }
+  footer p { font-size: 0.88rem; color: var(--soft); margin: 0; }
+  footer a {
+    color: var(--soft); text-decoration: none; border-bottom: 1px solid var(--rule);
+    padding-bottom: 1px; font-size: 0.88rem; transition: color 0.15s, border-color 0.15s;
+  }
+  footer a:hover { color: var(--muted); border-color: var(--soft); }
+  .footer-icon { width: 32px; height: 32px; flex-shrink: 0; }
 
-      .waitlist-honeypot {
-        position: absolute;
-        left: -10000px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
+  @media (max-width: 640px) {
+    .waitlist { padding: 40px 28px; border-radius: 16px; }
+    .waitlist-form-row { flex-direction: column; }
+    .waitlist-btn { width: 100%; }
+    footer { flex-direction: column; align-items: flex-start; gap: 12px; }
+  }
+</style>
+</head>
+<body>
 
-      .waitlist-error {
-        display: none;
-        margin: 0;
-        font-size: 0.75rem;
-        color: #8a5a4a;
-        line-height: 1.5;
-      }
- 
-      .waitlist-note {
-        margin-top: 12px;
-        font-size: 0.75rem;
-        color: var(--soft);
-      }
- 
-      .waitlist-confirm {
-        display: none;
-        font-size: 0.95rem;
-        color: var(--muted);
-        padding: 10px 0 4px;
-      }
- 
-      /* ── Responsive ───────────────────────────────────── */
- 
-      @media (max-width: 780px) {
-        .hero-wrap { padding: 52px 22px 72px; }
-        main { padding: 56px 22px 64px; }
-        .hero-logo {
-          top: 20px;
-          left: 22px;
-        }
- 
-        .hero-moments {
-          margin-top: 40px;
-          padding-top: 24px;
-          gap: 10px;
-        }
- 
-        .moment {
-          border-right: none;
-          font-size: 0.67rem;
-          padding: 0 10px;
-        }
- 
-        .bridge { margin-bottom: 12px; }
-        .bridge-sub { margin-bottom: 48px; }
- 
-        .demo-grid {
-          grid-template-columns: 1fr;
-          gap: 28px;
-        }
- 
-        .quote-block {
-          padding: 44px 28px;
-          margin-top: 60px;
-          border-radius: 16px;
-        }
- 
-        .insights {
-          margin-top: 56px;
-          max-width: 100%;
-        }
- 
-        .founder {
-          grid-template-columns: 1fr;
-          gap: 24px;
-          margin-top: 52px;
-        }
- 
-        .waitlist {
-          padding: 36px 24px;
-          margin-top: 52px;
-          border-radius: 16px;
-        }
- 
-        .waitlist-form-row {
-          flex-direction: column;
-        }
- 
-        .waitlist-btn { width: 100%; }
-      }
-    </style>
-  </head>
-  <body>
- 
-    <!--
-      HERO — dark, intimate.
-      This is where the user IS: tangled, circling,
-      unable to see what's actually happening.
-    -->
-    <header class="hero-wrap">
-      <div class="hero-inner">
-        <img class="hero-logo" src="/public/primary-logo-v3.png" alt="UnTangle" />
-        <h1 class="hero-title">
-          UnTangle what&rsquo;s actually<br />going on inside
-        </h1>
-        <p class="hero-sub">
-          When something doesn&rsquo;t sit right, you keep going over it.<br />
-          Not because you want to &mdash; but because you can&rsquo;t see
-          what&rsquo;s actually happening.
-        </p>
-        <div class="hero-moments">
-          <span class="moment">After an argument</span>
-          <span class="moment">During overthinking</span>
-          <span class="moment">Late at night</span>
-          <span class="moment">Before you respond</span>
-        </div>
+<header class="hero-wrap">
+  <div class="hero-inner">
+    <h1 class="hero-title">
+      Something is sitting with you.<br />
+      You just can&rsquo;t see what it is yet.
+    </h1>
+    <p class="hero-sub">
+      There&rsquo;s a difference between knowing something happened<br />
+      and understanding why it still matters.
+    </p>
+    <div class="hero-moments">
+      <span class="moment">A moment</span>
+      <span class="moment">A reaction</span>
+      <span class="moment">A feeling with no clear shape</span>
+    </div>
+  </div>
+</header>
+
+<main class="section" style="border-top: none;">
+  <p class="eyebrow">What is Decipherent</p>
+  <p class="lead">Decipherent is where you go to understand what&rsquo;s actually going on.</p>
+  <p class="body-text">You bring the moment, the reaction, or the feeling &mdash; however it comes out. Through conversation, the pattern underneath it comes into view, so you understand what was really going on, not just what happened.</p>
+  <p class="closing">Not calmed down. Understood.</p>
+</main>
+
+<main class="section">
+  <p class="eyebrow">Why conversation</p>
+  <p class="lead">You can think about something for hours and still only see your own version of it.</p>
+  <p class="body-text s3-body">Thinking alone repeats. It circles the same shape from the same angle, again and again. A conversation gives your thought somewhere to go &mdash; something to meet.</p>
+
+  <div class="insights">
+    <div class="insight">
+      <p class="insight-claim">Saying something out loud is different from thinking it.</p>
+      <p class="insight-body">The moment a thought has to become words for someone else, it starts to take a shape you can actually see.</p>
+    </div>
+    <div class="insight">
+      <p class="insight-claim">Being met with the right reflection shows you what you meant.</p>
+      <p class="insight-body">Not what you assumed you meant. What you actually meant &mdash; which is often a little different.</p>
+    </div>
+    <div class="insight">
+      <p class="insight-claim">A conversation reflects things back differently than you said them.</p>
+      <p class="insight-body">That small shift is often enough to see something you couldn&rsquo;t see from inside your own thinking.</p>
+    </div>
+  </div>
+
+  <p class="closing s3-closing">Understanding has to come first. Conversation is how it arrives.</p>
+</main>
+
+<main class="section sae-section">
+  <p class="eyebrow">Meet Sae</p>
+  <p class="sae-headline">This is who you&rsquo;ll be talking to.</p>
+  <p class="sae-body">Sae is who you have the conversation with. She listens for what&rsquo;s actually being said &mdash; not just the words, but what you&rsquo;re sitting on top of. She notices. She reflects things back. She doesn&rsquo;t rush toward a solution before you&rsquo;ve had a chance to see the thing clearly yourself.</p>
+
+  <div class="sae-notices">
+    <p class="sae-notice">She won&rsquo;t tell you what to do. She&rsquo;ll help you see what&rsquo;s actually there &mdash; and trust you with what comes next.</p>
+    <p class="sae-notice">She asks the way someone does when they&rsquo;re genuinely trying to understand, not the way a form asks.</p>
+    <p class="sae-notice">The conversation moves at your pace. Nothing about it feels like being processed.</p>
+  </div>
+
+  <p class="closing sae-closing">You&rsquo;re not talking to a tool. You&rsquo;re talking to Sae.</p>
+</main>
+
+<main class="section exp-section">
+  <p class="eyebrow">How it works</p>
+  <p class="exp-lead">You don&rsquo;t have to know what&rsquo;s wrong before you start.</p>
+  <p class="exp-body">Bring it as it is &mdash; unfinished, unclear, half-formed. That&rsquo;s enough to begin. The conversation is what makes it clearer, not the other way around.</p>
+
+  <div class="convo-frame">
+    <video autoplay loop muted playsinline width="100%">
+      <source src="/public/demo-v4.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <p class="convo-caption">A real conversation with Sae &mdash; from a vague reaction to seeing what it was actually about.</p>
+
+  <div class="exp-points">
+    <div class="exp-point">
+      <p class="exp-point-claim">Start with what you know.</p>
+      <p class="exp-point-body">You don&rsquo;t need a clear question. You need somewhere to put the thing you&rsquo;re carrying.</p>
+    </div>
+    <div class="exp-point">
+      <p class="exp-point-claim">Notice what moves.</p>
+      <p class="exp-point-body">Some parts of what you say shift when they&rsquo;re reflected back. Some don&rsquo;t. That difference matters.</p>
+    </div>
+    <div class="exp-point">
+      <p class="exp-point-claim">Let the pattern show.</p>
+      <p class="exp-point-body">Clarity comes from what stays true across the conversation &mdash; not from any single answer.</p>
+    </div>
+  </div>
+
+  <p class="closing exp-closing">You don&rsquo;t need to know what you&rsquo;re looking for. You just need to start talking.</p>
+</main>
+
+<main class="section proof-section">
+  <p class="eyebrow">Proof</p>
+  <p class="proof-lead">The difference shows up in the conversation.</p>
+  <p class="proof-body">The point isn&rsquo;t that Sae gives you an answer. It&rsquo;s that the conversation helps something that felt tangled become easier to see.</p>
+
+  <div class="insights">
+    <div class="insight">
+      <p class="insight-claim">Something vague becomes specific.</p>
+      <p class="insight-body">What begins as &ldquo;I don&rsquo;t know why this is bothering me&rdquo; can become something much more precise once the conversation starts moving.</p>
+    </div>
+    <div class="insight">
+      <p class="insight-claim">The reaction tells you more than the event.</p>
+      <p class="insight-body">Sometimes what stays with someone isn&rsquo;t what happened &mdash; it&rsquo;s how they felt they had to respond.</p>
+    </div>
+    <div class="insight">
+      <p class="insight-claim">What repeats starts to look like a pattern.</p>
+      <p class="insight-body">Clarity doesn&rsquo;t come from one clever answer. It comes from noticing what keeps showing up.</p>
+    </div>
+  </div>
+
+  <p class="closing proof-closing">Nothing here is claimed. It&rsquo;s just what happens when you actually talk it through.</p>
+</main>
+
+<main class="section founder-section">
+  <p class="eyebrow">Founder</p>
+  <p class="founder-lead">I built Decipherent because I know what it&rsquo;s like to be stuck inside your own version of something.</p>
+  <div class="founder-body">
+    <p>Decipherent came from my own experience of emotional overwhelm &mdash; especially during unresolved conversations and situations that kept replaying in my mind.</p>
+    <p>In those moments, my mind wasn&rsquo;t trying to relax. It was trying to make sense of what happened. Most tools I found helped me calm down &mdash; but not understand.</p>
+    <p>So I built one that does.</p>
+  </div>
+  <p class="closing founder-closing">Sometimes clarity doesn&rsquo;t come from thinking harder. It comes from finally having somewhere to talk it through.</p>
+  <div class="founder-identity">
+    <img class="founder-photo" src="./me.png" alt="Barathi S Subbaraman" />
+    <p class="founder-name">Barathi S Subbaraman &middot; Founder, Decipherent</p>
+  </div>
+</main>
+
+<div class="waitlist-wrap">
+  <div class="waitlist">
+    <span class="waitlist-label">Early access</span>
+    <p class="waitlist-heading">Be among the first to try it</p>
+    <p class="waitlist-sub">
+      Decipherent is in active development. Join the list &mdash;<br />
+      we&rsquo;ll reach out when it&rsquo;s ready.
+    </p>
+    <form class="waitlist-form" id="waitlist-form">
+      <input
+        type="text"
+        name="company"
+        id="waitlist-company"
+        class="waitlist-honeypot"
+        tabindex="-1"
+        autocomplete="off"
+        aria-hidden="true"
+      />
+      <div class="waitlist-form-row">
+        <input
+          class="waitlist-input"
+          type="email"
+          name="email"
+          id="waitlist-email"
+          placeholder="your@email.com"
+          required
+        />
+        <button class="waitlist-btn" type="submit">
+          Join waitlist
+        </button>
       </div>
-    </header>
- 
-    <!--
-      MAIN — warm cream.
-      Where the product takes you: light, grounded, clear.
-    -->
-    <main>
- 
-      <!-- Bridge — introduce Ira -->
-      <section>
-        <h2 style="font-size: 1.52rem; line-height: 1.42; font-weight: 500; color: var(--text); margin: 0 0 20px; max-width: 600px; letter-spacing: -0.02em;">
-          Meet Ira.
-        </h2>
-        <p class="bridge-sub">
-          She's a thoughtful presence built to understand what's actually tangling you up. Not to calm you down or give you answers — but to help you see what's underneath the confusion clearly enough that you can finally stop circling it.
-        </p>
-      </section>
- 
-      <!-- Demo — the center of the page -->
-      <section>
-        <div class="demo-grid">
- 
-        <div>
-          <div class="video-frame demo-video">
-            <video autoplay loop muted playsinline width="100%" id="demo-video">
-              <source src="/public/demo-v4.mp4" type="video/mp4" />
-            </video>
-          </div>
-          <p class="video-caption">From overwhelm to clarity &mdash; a real conversation with Ira.</p>
-        </div>
- 
-        <div class="commentary">
-          <p class="thesis">
-            Ira doesn&rsquo;t help you express yourself.<br />
-            She helps you see what&rsquo;s underneath.
-          </p>
-          <div class="support">
-            <p>What feels like one tangled thing is usually several things stacked together. When you separate them, the weight lifts.</p>
-          </div>
-        </div>
- 
-        </div>
-      </section>
- 
-      <!-- Quote — what the user will feel after using it -->
-      <section>
-        <div class="quote-block">
-        <span class="quote-mark" aria-hidden="true">&ldquo;</span>
-        <p class="quote-text">
-          That&rsquo;s exactly what I was feeling &mdash; I just couldn&rsquo;t put it into words.
-        </p>
-        <p class="quote-attr">What clarity feels like</p>
-        </div>
-      </section>
- 
-      <!-- How Ira works — conversational, warm, her presence -->
-      <section>
-        <h2 style="font-size: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; color: var(--soft); margin: 0 0 32px; font-weight: 600;">How this actually works</h2>
-        <div style="margin-top: 0; padding-top: 0; border-top: none;">
-        <p style="font-size: 1.02rem; color: var(--muted); line-height: 1.75; margin: 0 0 28px; max-width: 680px;">
-          What happens when you talk to Ira isn&rsquo;t complicated. You share what&rsquo;s happening &mdash; however it comes out. She listens. Then, slowly, she helps you see what was tangled underneath what you already said.
-        </p>
-        <p style="font-size: 1.02rem; color: var(--muted); line-height: 1.75; margin: 0 0 28px; max-width: 680px;">
-          Not by analyzing you. By understanding the shape of what you&rsquo;re feeling and reflecting it back so clearly you can finally see it too.
-        </p>
-        <p style="font-size: 1.02rem; color: var(--muted); line-height: 1.75; margin: 0; max-width: 680px;">
-          And then comes the moment. When you see it. When suddenly the thing that was making everything spin becomes obvious. When you can finally breathe.
-        </p>
-        </div>
-      </section>
+      <div class="waitlist-turnstile" id="turnstile-widget"></div>
+      <p class="waitlist-error" id="wl-error" role="alert"></p>
+    </form>
+    <p class="waitlist-confirm" id="wl-confirm">You&rsquo;re on the list. We&rsquo;ll be in touch.</p>
+    <p class="waitlist-note">No spam. Just one message when it&rsquo;s ready.</p>
+  </div>
+</div>
 
-      <!-- Why clarity matters -->
-      <section>
-        <h2 style="font-size: 0.7rem; letter-spacing: 0.11em; text-transform: uppercase; color: var(--soft); margin: 0 0 32px; font-weight: 600; display: none;">Why clarity matters</h2>
-        <div class="insights" style="margin-top: 0;">
-        <div class="insight">
-          <p class="insight-claim">Advice doesn&rsquo;t land before understanding arrives.</p>
-          <p class="insight-body">You can give someone the perfect words and they still won&rsquo;t stick if they don&rsquo;t see what&rsquo;s happening. Clarity has to come first.</p>
-        </div>
-        <div class="insight">
-          <p class="insight-claim">What&rsquo;s bothering you usually isn&rsquo;t what&rsquo;s bothering you.</p>
-          <p class="insight-body">There&rsquo;s the situation on the surface. And there&rsquo;s what it touches underneath. Most of the weight comes from the part you can&rsquo;t quite see.</p>
-        </div>
-        <div class="insight">
-          <p class="insight-claim">Seeing changes everything.</p>
-          <p class="insight-body">Not because you suddenly have all the answers. But because the spinning stops. You can finally breathe and think clearly about what&rsquo;s actually there.</p>
-        </div>
-        <p class="insights-close">That&rsquo;s what Ira does.</p>
-        </div>
-      </section>
- 
-      <!-- Founder — who built this and why it exists -->
-      <section>
-        <div class="founder">
- 
-        <div class="founder-left">
-          <img class="founder-photo" src="./me.png" alt="Barathi S Subbaraman" />
-          <div>
-            <span class="founder-label">The person behind it</span>
-            <p class="founder-name">Barathi S Subbaraman</p>
-            <p class="founder-role">
-              Founder, UnTangle &middot; Senior Product Manager<br />
-              9+ years in B2B &amp; B2B2C SaaS &middot; Full Stack background<br />
-              Previously: Pine Labs, Draup, ZingHR
-            </p>
-          </div>
-        </div>
- 
-        <div class="founder-why">
-          <p>
-            UnTangle came from my own experience of emotional overwhelm &mdash; especially during
-            unresolved conversations and situations that kept replaying in my mind.
-          </p>
-          <p>
-            In those moments, the mind isn&rsquo;t trying to relax. It&rsquo;s trying to make sense
-            of what happened. Most tools I found helped me calm down &mdash; but not understand.
-          </p>
-          <p>So I built one that does.</p>
-        </div>
- 
-        </div>
-      </section>
- 
-      <!-- Waitlist -->
-      <section>
-        <div class="waitlist">
-        <span class="waitlist-label">Early access</span>
-        <p class="waitlist-heading">Be among the first to try it</p>
-        <p class="waitlist-sub">
-          UnTangle is in active development. Join the list &mdash;<br />
-          we&rsquo;ll reach out when it&rsquo;s ready.
-        </p>
-        <form class="waitlist-form" id="waitlist-form">
-          <input
-            type="text"
-            name="company"
-            id="waitlist-company"
-            class="waitlist-honeypot"
-            tabindex="-1"
-            autocomplete="off"
-            aria-hidden="true"
-          />
-          <div class="waitlist-form-row">
-            <input
-              class="waitlist-input"
-              type="email"
-              name="email"
-              id="waitlist-email"
-              placeholder="your@email.com"
-              required
-            />
-            <button class="waitlist-btn" type="submit">
-              Join waitlist
-            </button>
-          </div>
-          <div class="waitlist-turnstile" id="turnstile-widget"></div>
-          <p class="waitlist-error" id="wl-error" role="alert"></p>
-        </form>
-        <p class="waitlist-confirm" id="wl-confirm">You&rsquo;re on the list. We&rsquo;ll be in touch.</p>
-        <p class="waitlist-note">No spam. Just one message when it&rsquo;s ready.</p>
-        </div>
-      </section>
- 
-      <footer>
-        <div style="display: flex; align-items: center; gap: 8px;">
-          <img class="footer-icon" src="/public/logo-icon-dark.png" alt="" aria-hidden="true" />
-          <p>Built for clarity</p>
-        </div>
-        <a href="mailto:barathisubbaraman@untangleself.com">barathisubbaraman@untangleself.com</a>
-      </footer>
- 
-    </main>
- 
-    <script type="module" src="/src/main.js"></script>
-  </body>
+<footer>
+  <div style="display: flex; align-items: center; gap: 8px;">
+    <img class="footer-icon" src="/public/logo-icon-dark.png" alt="" aria-hidden="true" />
+    <p>See what&rsquo;s underneath</p>
+  </div>
+  <a href="mailto:barathisubbaraman@decipherent.com">barathisubbaraman@decipherent.com</a>
+</footer>
+
+<script type="module" src="/src/main.js"></script>
+
+</body>
 </html>
