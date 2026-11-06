@@ -14,11 +14,13 @@ const WAITLIST_API_URL = (() => {
   return base.endsWith('/api/waitlist') ? base : `${base}/api/waitlist`
 })()
 
-const form = document.getElementById('waitlist-form')
-const emailInput = document.getElementById('waitlist-email')
-const companyInput = document.getElementById('waitlist-company')
-const errorEl = document.getElementById('wl-error')
-const turnstileContainer = document.getElementById('turnstile-widget')
+const waitlistWrap = document.querySelector('.waitlist-wrap')
+const waitlistVisible = Boolean(waitlistWrap) && !waitlistWrap.hasAttribute('hidden')
+const form = waitlistVisible ? document.getElementById('waitlist-form') : null
+const emailInput = waitlistVisible ? document.getElementById('waitlist-email') : null
+const companyInput = waitlistVisible ? document.getElementById('waitlist-company') : null
+const errorEl = waitlistVisible ? document.getElementById('wl-error') : null
+const turnstileContainer = waitlistVisible ? document.getElementById('turnstile-widget') : null
 
 /** @type {string | null} */
 let turnstileWidgetId = null
